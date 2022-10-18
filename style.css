@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+    background:linear-gradient(135deg,rgba(10, 10, 12, 0.644),rgba(23, 26, 61, 0.4)),url(plans-background.jpg) no-repeat center center/ cover;
+}
+header{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px 0px 20px;
+    height:50px;
+}
+.logo{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+#click{
+    display: none;
+}
+i{
+    cursor: pointer;
+    font-style: normal;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+    margin:0px;
+}
+.nav-links{
+    text-decoration: none;
+    margin: 0 30px;
+    background:rgba(255, 255, 255, 0.836);
+    padding:6px 10px;
+    border-radius:3px;
+    color:black;
+}
+.nav-links:hover{
+    color: rgb(3, 3, 3);
+    background-color: #fff;
+}
+.menu{
+    display: none;
+}
+.phuse-form{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding:30px;
+    background-color: #363131c4;
+    border-radius: 4px;
+}
+.details{
+    margin:10px 0px;
+}
+label{
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+input{
+    width:60vw;
+    margin-top: 20px;
+    height: 35px;
+    border-radius: 3px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+h1{
+    text-decoration: underline;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+}
+.submit-btn{
+    font-size: 30px;
+    background-color: rgb(107, 255, 107);
+    margin-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background-color: green;
+    color: white;
+}
+/*MEDIA QUERY*/
+
+/*tablet*/
+@media screen and (max-width: 900px){
+    header{
+        display:block;
+        /* text-align: center; */
+        padding:5px 0px;
+    }
+    .logo{
+        padding-left: 30px;
+    }
+    .nav-bar{
+        position:relative;
+        left:-100%;
+        background:#000000f0;
+        transition: all 0.3s ease;
+    }
+    #click:checked~.nav-bar{
+        left:0%;
+    }
+    i::before{
+        content: "=";
+    }
+    #click:checked~.menu i::before{
+        content: "X";
+        font-size: 30px;
+        font-family:monospace;
+    }
+    .nav-list{
+        display:block;
+        padding:30px;
+        text-align: center;
+    }
+    .nav-list li{
+        margin:30px 0px;
+        padding-bottom:2px;
+        border-bottom:solid #d4bbbb33 1px;
+    }
+    .nav-links{
+        color:white;
+        background:rgb(0, 0, 0);
+        padding:0px;
+    }
+    .nav-links:hover{
+        color: rgb(100, 75, 245);
+        text-decoration: underline;
+    }
+    form{
+        padding: 10px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .menu{
+        display:block;
+        font-size: 40px;
+        color: white;
+        position: absolute;
+        right: 8px;
+        top: 3px;
+    }
+    #click:checked ~ .nav-list{
+        background-color: aquamarine;
+    }
+}
+
+/*mobiles*/
+@media screen and (max-width:500px) {
+    .phuse-form{
+        display:block;
+    }
+    h1{
+        text-align: center;
+        font-size: 25px;
+    }
+    input{
+        width:100%;
+        box-sizing:border-box;
+        margin-top:4px;
+        
+    }
+    .logo{
+        padding-left: 10px;
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:220px) {
+    .logo{
+        font-size: 20px;
+    }
+    .menu{
+        font-size: 20px;
+    }
+    .nav-list{
+        padding: 0px;
+    }
+}
